@@ -9,9 +9,9 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        $produto = Produto::all();
+        $produtos = Produto::all();
 
-        dd($produto);
+        return view('produtos.index', compact('produtos'));
     }
 
     public function create()
