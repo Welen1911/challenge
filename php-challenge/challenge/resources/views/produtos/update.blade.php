@@ -19,11 +19,12 @@
     <div class="flex min-h-screen items-center justify-center">
         <div class="overflow-x-auto">
             <form class="max-w-md mx-auto mt-5 min-w-full bg-white shadow-md rounded-xl"
-                action="{{ route('produtos.store') }}" method="post">
+                action="{{ route('produtos.update', $produto->id) }}" method="post">
+                @method('put')
                 @include('components.produtoForm')
 
                 <button type="submit"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cadastrar</button>
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Salvar</button>
             </form>
         </div>
     </div>

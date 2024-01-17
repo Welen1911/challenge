@@ -47,7 +47,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('produtos.update', compact('produto'));
     }
 
     /**
@@ -55,7 +55,14 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        $produto->update([
+            'nome' => $request->nome,
+            'descricao' => $request->descricao,
+            'preco' => $request->preco,
+            'quantidade' => $request->quantidade,
+        ]);
+
+        return redirect()->route('produtos.index');
     }
 
     /**
